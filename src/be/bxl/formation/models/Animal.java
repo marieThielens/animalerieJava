@@ -10,6 +10,7 @@ public class Animal {
     private int age;
     private String dateArrivee;
     private double probDeces;
+    private boolean vivant;
     // endregion
 
     // region encapsulation
@@ -38,6 +39,9 @@ public class Animal {
     public void setSexe(String sexe){
         this.sexe = sexe;
     }
+    public void setPoids(int poids){
+        this.poids = poids;
+    }
 
     public void setDateArrivee(String dateArrivee){
         this.dateArrivee = dateArrivee;
@@ -48,14 +52,20 @@ public class Animal {
         return getNom() + " pèse " + getPoids() + " . C'est un animal de sexe " + getSexe() + " Est arrivé en date du " + getDateArrivee();
     }
 
-
     // region constructeur
     public Animal(String nom, int poids, String sexe, String dateArrivee ){
         setNom(nom);
+        setPoids(poids);
         setSexe(sexe);
         setDateArrivee(dateArrivee);
     }
 
-    //
+    // endregion
+
+    // region methode
+        public void crier(String cri){
+            System.out.println(getNom() + "te dit : " + cri);
+        }
+    // endregion
 
 }
