@@ -1,10 +1,12 @@
 package be.bxl.formation.models;
 
+import java.util.ArrayList;
+
 public class Animal {
 
     // region champ
     private String nom;
-    private int poids;
+    private double poids;
     private int tailleCm;
     private String sexe;
     private int age;
@@ -17,7 +19,7 @@ public class Animal {
     public String getNom(){
         return nom;
     }
-    public int getPoids(){
+    public double getPoids(){
         return poids;
     }
     public int getTailleCm(){
@@ -39,7 +41,7 @@ public class Animal {
     public void setSexe(String sexe){
         this.sexe = sexe;
     }
-    public void setPoids(int poids){
+    public void setPoids(double poids){
         this.poids = poids;
     }
 
@@ -49,11 +51,11 @@ public class Animal {
 
     // endregion
     public String presentationAnimal(){
-        return getNom() + " pèse " + getPoids() + " . C'est un animal de sexe " + getSexe() + " Est arrivé en date du " + getDateArrivee();
+        return getNom() + " pèse " + getPoids() + " kg . C'est un animal de sexe " + getSexe() + " Est arrivé en date du " + getDateArrivee();
     }
 
     // region constructeur
-    public Animal(String nom, int poids, String sexe, String dateArrivee ){
+    public Animal(String nom, double poids, String sexe, String dateArrivee ){
         setNom(nom);
         setPoids(poids);
         setSexe(sexe);
@@ -65,6 +67,9 @@ public class Animal {
     // region methode
         public void crier(String cri){
             System.out.println(getNom() + "te dit : " + cri);
+        }
+        public void estVivant(){
+
         }
     // endregion
 
