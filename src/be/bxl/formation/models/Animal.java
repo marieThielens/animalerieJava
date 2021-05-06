@@ -9,6 +9,7 @@ public class Animal {
     private String sexe;
     private int age;
     private String dateArrivee;
+    private double probDeces;
     // endregion
 
     // region encapsulation
@@ -30,24 +31,26 @@ public class Animal {
     public String getDateArrivee() {
         return dateArrivee;
     }
+    public double getProbDeces(){ return probDeces;}
     public void setNom(String nom){
         this.nom = nom;
     }
     public void setSexe(String sexe){
         this.sexe = sexe;
     }
+
     public void setDateArrivee(String dateArrivee){
         this.dateArrivee = dateArrivee;
     }
 
     // endregion
     public String presentationAnimal(){
-        return getNom() + " pèse " + getPoids() + " . C'est un animal de sexe " + getSexe() + " Et est arrivé en date du " + getDateArrivee();
+        return getNom() + " pèse " + getPoids() + " . C'est un animal de sexe " + getSexe() + " Est arrivé en date du " + getDateArrivee();
     }
 
 
     // region constructeur
-    public Animal(String nom, String sexe, String dateArrivee ){
+    public Animal(String nom, int poids, String sexe, String dateArrivee ){
         setNom(nom);
         setSexe(sexe);
         setDateArrivee(dateArrivee);

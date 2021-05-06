@@ -6,7 +6,28 @@ public class Chat extends Animal{
     private String caractere;
     private String griffe;
     private String poils;
-    // region
+    // endregionregion
+
+    // region Encapsulation
+    public void setCaractere(String caractere) {
+        this.caractere = caractere;
+    }
+    public void setGriffe(String griffe) {
+        this.griffe = griffe;
+    }
+    public void setPoils(String poils) {
+        this.poils = poils;
+    }
+    // endregion
+
+    // region constructeur
+    public Chat(String nom, String sexe, String dateArrivee,  String caractere,String griffe, String poils){
+        super( nom, sexe, dateArrivee);
+        setCaractere(caractere);
+        setGriffe(griffe);
+        setPoils(poils);
+    }
+    // endregion
 }
 
 
