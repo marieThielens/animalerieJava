@@ -29,6 +29,12 @@ public class Chat extends Animal{
     }
     // endregion
 
+    @Override
+    public void crier(){
+        System.out.println("Miaouuuu miaouuuu");
+    }
+
+
 
 
 }

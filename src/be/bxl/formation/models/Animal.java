@@ -1,8 +1,8 @@
 package be.bxl.formation.models;
 
-import java.util.ArrayList;
+import be.bxl.formation.helpers.FaireRandom;
 
-public class Animal {
+public abstract class Animal {
 
     // region champ
     private String nom;
@@ -15,7 +15,7 @@ public class Animal {
     private boolean vivant;
     // endregion
 
-    // region encapsulation
+    // region encapsulation alt + insert pour générer automatiquement
     public String getNom(){
         return nom;
     }
@@ -34,7 +34,9 @@ public class Animal {
     public String getDateArrivee() {
         return dateArrivee;
     }
+    public boolean vivant() {return vivant; }
     public double getProbDeces(){ return probDeces;}
+
     public void setNom(String nom){
         this.nom = nom;
     }
@@ -57,20 +59,33 @@ public class Animal {
     // region constructeur
     public Animal(String nom, double poids, String sexe, String dateArrivee ){
         setNom(nom);
-        setPoids(poids);
+        this.poids = poids;
         setSexe(sexe);
         setDateArrivee(dateArrivee);
+        this.vivant = true;
     }
 
     // endregion
 
     // region methode
-        public void crier(String cri){
-            System.out.println(getNom() + "te dit : " + cri);
-        }
-        public void estVivant(){
 
+    // Connait la methode mais ne sais pas encore ce qu'elle doit crier,
+    // c'est l'enfant qui va le dire . il faut mettre abstract aussi en haut
+    public abstract void crier();
+
+    public void estVivant() {
+        // envoie une valeur de 0 à 1 x 100 pour etre en pourcent
+        double proba = FaireRandom.obtenirProbabilite();
+
+    /*    protected void mourir(){
+            this.vivant = false;
+        } */
+        if(proba <= getProbDeces()) {
+            this.vivant = false;
+           // mourir();
         }
-    // endregion
+
+        // endregion
+    }
 
 }

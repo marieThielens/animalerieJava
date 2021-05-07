@@ -20,16 +20,20 @@ public class Main {
 
         for (Animal a : chats) {
             System.out.println(a.presentationAnimal());
-            a.crier("Miaouuuu MIAOUUUUU !!!!");
+            a.crier();
             // a.estVivant();
         }
         // endregion
 
         // region chien
-        Chien Rantanlan = new Chien("Rantanplan", 5.9, "M", "13/06/2021", "rouge", "caniche", true);
+        Chien rantanplan = new Chien("Rantanplan", 5.9, "M", "13/06/2021", "rouge", "caniche", true);
+        ArrayList<Animal> chiens = new ArrayList<>();
+        chiens.add(rantanplan);
+        for (Animal c : chiens ) {
+            System.out.println(c.presentationAnimal());
+            c.crier();
+        }
         // endregion
 
-        // System.out.println(chat.presentationAnimal());
-        // chat.crier("Miaouuuu MIAOUUUUU !!!!");
     }
 }

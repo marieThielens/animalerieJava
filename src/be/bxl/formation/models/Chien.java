@@ -26,4 +26,8 @@ public class Chien extends Animal {
         setCouleurCollier(couleurCollier);
     }
     // endregion
+    @Override
+    public void crier(){
+        System.out.println("Wouf wouf");
+    }
 }
