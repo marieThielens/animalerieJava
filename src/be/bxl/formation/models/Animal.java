@@ -1,5 +1,4 @@
 package be.bxl.formation.models;
-
 import be.bxl.formation.helpers.FaireRandom;
 
 public abstract class Animal {
@@ -34,8 +33,9 @@ public abstract class Animal {
     public String getDateArrivee() {
         return dateArrivee;
     }
-    public boolean vivant() {return vivant; }
-    public double getProbDeces(){ return probDeces;}
+    public boolean isVivant() {return vivant; }
+    // abstract. On ne sais pas encore
+    protected abstract double getProbDeces();
 
     public void setNom(String nom){
         this.nom = nom;
@@ -43,10 +43,7 @@ public abstract class Animal {
     public void setSexe(String sexe){
         this.sexe = sexe;
     }
-    public void setPoids(double poids){
-        this.poids = poids;
-    }
-
+    public void setPoids(double poids){ this.poids = poids; }
     public void setDateArrivee(String dateArrivee){
         this.dateArrivee = dateArrivee;
     }
@@ -64,10 +61,7 @@ public abstract class Animal {
         setDateArrivee(dateArrivee);
         this.vivant = true;
     }
-
-    // endregion
-
-    // region methode
+    // methode
 
     // Connait la methode mais ne sais pas encore ce qu'elle doit crier,
     // c'est l'enfant qui va le dire . il faut mettre abstract aussi en haut
