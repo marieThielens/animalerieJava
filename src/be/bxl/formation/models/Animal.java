@@ -55,13 +55,12 @@ public abstract class Animal {
 
     // region constructeur
     public Animal(String nom, double poids, String sexe, String dateArrivee ){
-        setNom(nom);
-        this.poids = poids;
-        setSexe(sexe);
-        setDateArrivee(dateArrivee);
+        this.setNom(nom);
+        this.setPoids(poids);
+        this.setSexe(sexe);
+        this.setDateArrivee(dateArrivee);
         this.vivant = true;
     }
-    // methode
 
     // Connait la methode mais ne sais pas encore ce qu'elle doit crier,
     // c'est l'enfant qui va le dire . il faut mettre abstract aussi en haut
@@ -78,7 +77,6 @@ public abstract class Animal {
             this.vivant = false;
            // mourir();
         }
-
         // endregion
     }
 
